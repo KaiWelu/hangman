@@ -1,5 +1,6 @@
 const gameState = {
   guessWord: "javascript",
+  guess: "",
   active: true,
   fails: 0,
   buttons: [],
@@ -19,7 +20,13 @@ function resetGame() {
   }
 }
 
-function checkForSuccess() {}
+function checkForSuccess() {
+  if (gameState.guessWord === gameState.guess) {
+    console.log("succes!");
+    console.log(gameState);
+    gameState.active = false;
+  }
+}
 
 console.log(gameState);
 //this is gonna render the game State
@@ -27,6 +34,7 @@ function renderGameState() {
   // this renders the guessword display
   wordDisplay.innerHTML = "";
   if (gameState.active) {
+    gameState.guess = "";
     for (let i = 0; i < gameState.guessWord.length; i++) {
       let character = "_";
       gameState.buttons.forEach((element) => {
@@ -35,6 +43,7 @@ function renderGameState() {
           element.checked === true
         ) {
           character = element.character;
+          gameState.guess += element.character;
         }
       });
       const newDiv = document.createElement("div");
@@ -56,6 +65,9 @@ function renderGameState() {
       button.setAttribute("disabled", true);
     }
   });
+  console.log(gameState);
+
+  checkForSuccess();
 }
 
 // event listener for keyboard clicks
@@ -67,5 +79,6 @@ keyboard.addEventListener("click", (event) => {
   });
   renderGameState();
 });
+
 resetGame();
 renderGameState();

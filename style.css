@@ -1,0 +1,19 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+}
+
+#menu {
+  background-color: blue;
+}
+
+#word-display {
+  background-color: blueviolet;
+}
+
+#keyboard {
+  _background-color: chartreuse;
+}

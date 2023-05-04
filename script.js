@@ -18,9 +18,27 @@ console.log(gameState);
 //this is gonna render the game State
 function renderGameState() {
   // this renders the guessword display
+  wordDisplay.innerHTML = "";
   if (gameState.active) {
-    console.log("active");
+    for (let i = 0; i < gameState.guessWord.length; i++) {
+      let character = "_";
+      gameState.buttons.forEach((element) => {
+        console.log(gameState.guessWord[i]);
+        console.log(element.character);
+        if (
+          gameState.guessWord[i] === element.character &&
+          element.checked === true
+        ) {
+          character = element.character;
+        }
+      });
+      const newDiv = document.createElement("div");
+      const newChar = document.createTextNode(character.toUpperCase());
+      newDiv.append(newChar);
+      wordDisplay.append(newDiv);
+    }
   }
+
   // this renders the keyboard buttons
   keyboard.innerHTML = "";
   gameState.buttons.forEach((element) => {

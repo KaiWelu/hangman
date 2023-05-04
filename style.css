@@ -11,7 +11,11 @@ body {
 }
 
 #word-display {
-  background-color: blueviolet;
+  background-color: lightcoral;
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+  font-size: 1.5rem;
 }
 
 #keyboard {

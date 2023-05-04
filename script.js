@@ -7,12 +7,19 @@ const gameState = {
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-for (let i = 0; i < alphabet.length; i++) {
-  gameState.buttons.push({ character: alphabet[i], checked: false });
-}
-
 const keyboard = document.querySelector("#keyboard");
 const wordDisplay = document.querySelector("#word-display");
+
+function resetGame() {
+  gameState.active = true;
+  gameState.fails = 0;
+  gameState.buttons = [];
+  for (let i = 0; i < alphabet.length; i++) {
+    gameState.buttons.push({ character: alphabet[i], checked: false });
+  }
+}
+
+function checkForSuccess() {}
 
 console.log(gameState);
 //this is gonna render the game State
@@ -23,8 +30,6 @@ function renderGameState() {
     for (let i = 0; i < gameState.guessWord.length; i++) {
       let character = "_";
       gameState.buttons.forEach((element) => {
-        console.log(gameState.guessWord[i]);
-        console.log(element.character);
         if (
           gameState.guessWord[i] === element.character &&
           element.checked === true
@@ -62,5 +67,5 @@ keyboard.addEventListener("click", (event) => {
   });
   renderGameState();
 });
-
+resetGame();
 renderGameState();

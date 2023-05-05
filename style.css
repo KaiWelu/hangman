@@ -2,7 +2,7 @@ html {
   box-sizing: border-box;
   font-family: "Press Start 2P", cursive;
   --screen-color: black;
-  --text-color: rgb(19, 245, 19);
+  --text-color: rgb(37, 210, 37);
 }
 
 body {
@@ -18,7 +18,9 @@ body {
   background-color: var(--screen-color);
   color: var(--text-color);
   height: 10%;
-  padding: 4rem;
+  padding: 2rem;
+  _border-bottom: double 0.5rem var(--text-color);
+  margin-bottom: 1rem;
 }
 
 .header-div {
@@ -68,6 +70,8 @@ main {
   gap: 2rem;
   padding: 2rem;
   font-size: 3rem;
+  _border-bottom: double 0.5rem var(--text-color);
+  border: double 0.5rem var(--text-color);
 }
 
 #keyboard {
@@ -77,6 +81,7 @@ main {
   display: flex;
   gap: 0.5rem;
   padding: 2rem;
+  margin-top: 1rem;
 }
 
 #keyboard > button {

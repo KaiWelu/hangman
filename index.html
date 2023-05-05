@@ -7,11 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <main id="game-display">
-        <header id="menu"></header>
+        <header id="menu">
+            <div class="header-div"><button id="active">Active</button></div>
+            <div class="header-div">
+                <div id="fails">Fails: </div>
+            </div>
+            <div class="header-div"><button id="new-game">New Game</button></div>
+        </header>
         <article id="word-display"></article>
         <footer id="keyboard"></footer>
     </main>

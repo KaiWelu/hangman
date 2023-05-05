@@ -34,7 +34,7 @@ function renderGameState() {
   // this renders the guessword display
   wordDisplay.innerHTML = "";
   if (gameState.active) {
-    gameState.guess = "";
+    gameState.guess = ""; //resets the guess every render
     for (let i = 0; i < gameState.guessWord.length; i++) {
       let character = "_";
       gameState.buttons.forEach((element) => {
@@ -43,7 +43,7 @@ function renderGameState() {
           element.checked === true
         ) {
           character = element.character;
-          gameState.guess += element.character;
+          gameState.guess += element.character; //updates the guess
         }
       });
       const newDiv = document.createElement("div");

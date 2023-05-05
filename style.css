@@ -1,23 +1,108 @@
 html {
   box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+  --screen-color: black;
+  --text-color: rgb(19, 245, 19);
 }
 
 body {
+  height: 80vh;
   display: flex;
+  justify-content: center;
+  background-color: black;
 }
 
 #menu {
-  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--screen-color);
+  color: var(--text-color);
+  height: 10%;
+  padding: 4rem;
+}
+
+.header-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#active {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#fails {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#new-game {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+main {
+  height: 60%;
 }
 
 #word-display {
-  background-color: lightcoral;
+  background-color: var(--screen-color);
+  color: var(--text-color);
+  height: 80%;
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
   padding: 2rem;
-  font-size: 1.5rem;
+  font-size: 3rem;
 }
 
 #keyboard {
-  _background-color: chartreuse;
+  background-color: var(--screen-color);
+  color: var(--text-color);
+  padding: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+
+#keyboard > button {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#keyboard > button {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#keyboard > button:disabled {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem rgb(1, 28, 1);
+  color: rgb(1, 28, 1);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
 }

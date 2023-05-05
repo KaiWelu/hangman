@@ -7,11 +7,28 @@ const gameState = {
 };
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
+const wordList = [
+  "javascript",
+  "element",
+  "dom",
+  "selector",
+  "object",
+  "array",
+  "flexbox",
+  "gradient",
+];
 
 const keyboard = document.querySelector("#keyboard");
 const wordDisplay = document.querySelector("#word-display");
 
+function randomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 function resetGame() {
+  gameState.guessWord = wordList[randomInt(0, wordList.length - 1)];
   gameState.active = true;
   gameState.fails = 0;
   gameState.guess = "";

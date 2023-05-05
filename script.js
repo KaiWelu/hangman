@@ -90,6 +90,12 @@ function renderGameState() {
         button.setAttribute("disabled", true);
       }
     });
+    //this renders the succes button
+    const newFailButton = document.createElement("button");
+    newFailButton.id = "active";
+    newFailButton.append("Active");
+    document.querySelector("#active-div").innerHTML = "";
+    document.querySelector("#active-div").append(newFailButton);
 
     checkForSuccess();
   } else {
@@ -131,9 +137,18 @@ function renderGameState() {
       button.id = element.character;
       button.setAttribute("disabled", true);
     });
+
+    //this renders the succes button
+    const newFailButton = document.createElement("button");
+    newFailButton.id = "active";
+    newFailButton.style.color = "red";
+    newFailButton.style.borderColor = "red";
+    newFailButton.append("Failed");
+    document.querySelector("#active-div").innerHTML = "";
+    document.querySelector("#active-div").append(newFailButton);
   }
 
-  if (checkForSuccess() === true && gameState.active === true) {
+  if (checkForSuccess() === true) {
     wordDisplay.innerHTML = "";
     keyboard.innerHTML = "";
     // this renders the word display
@@ -149,6 +164,7 @@ function renderGameState() {
         }
       });
       const newDiv = document.createElement("div");
+      newDiv.style.color = "gold";
       const newChar = document.createTextNode(character.toUpperCase());
       newDiv.append(newChar);
       wordDisplay.append(newDiv);
@@ -162,6 +178,15 @@ function renderGameState() {
       button.id = element.character;
       button.setAttribute("disabled", true);
     });
+
+    // this renders the success button
+    const newFailButton = document.createElement("button");
+    newFailButton.id = "active";
+    newFailButton.style.color = "gold";
+    newFailButton.style.borderColor = "gold";
+    newFailButton.append("Success");
+    document.querySelector("#active-div").innerHTML = "";
+    document.querySelector("#active-div").append(newFailButton);
   }
 
   console.log(gameState);

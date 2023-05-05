@@ -8,7 +8,7 @@ const gameState = {
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
 const wordList = [
-  "javascript",
+  "api",
   "element",
   "dom",
   "selector",
@@ -16,6 +16,17 @@ const wordList = [
   "array",
   "flexbox",
   "gradient",
+  "grid",
+  "padding",
+  "margin",
+  "github",
+  "loop",
+  "margin",
+  "callback",
+  "boolean",
+  "string",
+  "state",
+  "rendering",
 ];
 
 const keyboard = document.querySelector("#keyboard");
@@ -210,7 +221,7 @@ keyboard.addEventListener("click", (event) => {
 });
 
 // event listener for new game button
-document.querySelector("#new-game").addEventListener("click", (event) => {
+document.querySelector("#new-game").addEventListener("click", () => {
   resetGame();
   renderGameState();
 });

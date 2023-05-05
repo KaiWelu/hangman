@@ -1,5 +1,5 @@
 const gameState = {
-  guessWord: "kai",
+  guessWord: "javascript",
   guess: "",
   active: true,
   fails: 0,
@@ -76,6 +76,35 @@ function renderGameState() {
 
     checkForSuccess();
   } else {
+    // this renders the guessword display
+    for (let i = 0; i < gameState.guessWord.length; i++) {
+      const newDiv = document.createElement("div");
+      let character = "_";
+      gameState.buttons.forEach((element) => {
+        if (
+          gameState.guessWord[i] === element.character &&
+          element.checked === true
+        ) {
+          character = element.character;
+        } else if (
+          gameState.guessWord[i] === element.character &&
+          element.checked === false
+        ) {
+          character = element.character;
+          newDiv.classList.add("failed-char");
+        }
+      });
+      const newChar = document.createTextNode(character.toUpperCase());
+      newDiv.append(newChar);
+      wordDisplay.append(newDiv);
+    }
+    // this renders the fails counter
+    document.querySelector("#fails-div").innerHTML = "";
+    const failDiv = document.createElement("div");
+    failDiv.id = "fails";
+    failDiv.append("Fails:" + gameState.fails);
+    document.querySelector("#fails-div").append(failDiv);
+
     // this renders the keyboard buttons
     gameState.buttons.forEach((element) => {
       const button = document.createElement("button");
@@ -87,7 +116,7 @@ function renderGameState() {
     });
   }
 
-  if (checkForSuccess() === true) {
+  if (checkForSuccess() === true && gameState.active === true) {
     wordDisplay.innerHTML = "";
     keyboard.innerHTML = "";
     // this renders the word display

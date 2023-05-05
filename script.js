@@ -69,6 +69,7 @@ function renderGameState() {
     // this renders the guessword display
     for (let i = 0; i < gameState.guessWord.length; i++) {
       let character = "_";
+      const newDiv = document.createElement("div");
       gameState.buttons.forEach((element) => {
         if (
           gameState.guessWord[i] === element.character &&
@@ -78,7 +79,8 @@ function renderGameState() {
           gameState.guess += element.character; //updates the guess
         }
       });
-      const newDiv = document.createElement("div");
+
+      newDiv.classList.add("character");
       const newChar = document.createTextNode(character.toUpperCase());
       newDiv.append(newChar);
       wordDisplay.append(newDiv);
@@ -126,6 +128,7 @@ function renderGameState() {
         ) {
           character = element.character;
           newDiv.classList.add("failed-char");
+          newDiv.classList.add("fade-in");
         }
       });
       const newChar = document.createTextNode(character.toUpperCase());
@@ -163,18 +166,19 @@ function renderGameState() {
     wordDisplay.innerHTML = "";
     keyboard.innerHTML = "";
     // this renders the word display
+
     for (let i = 0; i < gameState.guessWord.length; i++) {
       let character = "_";
+      const newDiv = document.createElement("div");
       gameState.buttons.forEach((element) => {
         if (
           gameState.guessWord[i] === element.character &&
           element.checked === true
         ) {
           character = element.character;
-          gameState.guess += element.character; //updates the guess
+          newDiv.classList.add("fade-in");
         }
       });
-      const newDiv = document.createElement("div");
       newDiv.style.color = "gold";
       const newChar = document.createTextNode(character.toUpperCase());
       newDiv.append(newChar);

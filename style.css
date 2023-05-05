@@ -56,6 +56,11 @@ body {
   font-family: "Press Start 2P", cursive;
 }
 
+#new-game:hover {
+  background-color: var(--text-color);
+  color: var(--screen-color);
+}
+
 main {
   height: 60%;
 }
@@ -72,6 +77,29 @@ main {
   font-size: 3rem;
   _border-bottom: double 0.5rem var(--text-color);
   border: double 0.5rem var(--text-color);
+}
+
+.fade-in {
+  animation-duration: 1.5s;
+  animation-name: fade-in;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #keyboard {
@@ -110,6 +138,16 @@ main {
   border-radius: 0.5rem;
   font-size: 1rem;
   font-family: "Press Start 2P", cursive;
+}
+
+#keyboard > button[disabled]:hover {
+  color: rgb(1, 28, 1);
+  background-color: black;
+}
+
+#keyboard > button:hover {
+  background-color: var(--text-color);
+  color: var(--screen-color);
 }
 
 .failed-char {

@@ -1,0 +1,155 @@
+html {
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+  --screen-color: black;
+  --text-color: rgb(37, 210, 37);
+}
+
+body {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+#menu {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--screen-color);
+  color: var(--text-color);
+  height: 10%;
+  padding: 2rem;
+  _border-bottom: double 0.5rem var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.header-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#active {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#fails {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#new-game {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#new-game:hover {
+  background-color: var(--text-color);
+  color: var(--screen-color);
+}
+
+main {
+  height: 60%;
+}
+
+#word-display {
+  background-color: var(--screen-color);
+  color: var(--text-color);
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  font-size: 3rem;
+  _border-bottom: double 0.5rem var(--text-color);
+  border: double 0.5rem var(--text-color);
+}
+
+.fade-in {
+  animation-duration: 1.5s;
+  animation-name: fade-in;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#keyboard {
+  background-color: var(--screen-color);
+  color: var(--text-color);
+  padding: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+#keyboard > button {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#keyboard > button {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem var(--text-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#keyboard > button:disabled {
+  all: unset;
+  padding: 0.5rem;
+  border: solid 0.2rem rgb(1, 28, 1);
+  color: rgb(1, 28, 1);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+}
+
+#keyboard > button[disabled]:hover {
+  color: rgb(1, 28, 1);
+  background-color: black;
+}
+
+#keyboard > button:hover {
+  background-color: var(--text-color);
+  color: var(--screen-color);
+}
+
+.failed-char {
+  color: red;
+}

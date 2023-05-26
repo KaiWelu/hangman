@@ -1,0 +1,221 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: "Special Elite", cursive;
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  opacity: 0.8;
+  background-image: radial-gradient(#ecf326 1px, transparent 1px),
+    radial-gradient(#ecf326 1px, #2bcf55 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+h1 {
+  margin-bottom: 0;
+  margin-top: 1rem;
+  font-size: 4.5rem;
+  color: white;
+  font-family: "Montserrat Subrayada", sans-serif;
+  -webkit-text-stroke: 2px #000000;
+  text-shadow: 2px 2px #ecf326, 4px 4px black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  height: 10vh;
+}
+
+main {
+  background-color: #fafaf300;
+  padding: 2rem;
+  width: 50%;
+}
+article {
+  position: relative;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer {
+  display: grid;
+  grid-auto-flow: row;
+  _justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.nav-div {
+  display: flex;
+  gap: 2rem;
+}
+
+.good-char {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+  background-color: white;
+  color: black;
+  border: solid black 2px;
+  box-shadow: 3px 2px #ecf326, 6px 4px black;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-family: "Special Elite", cursive;
+}
+.mystery-char {
+  all: unset;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+  background-color: black;
+  color: white;
+  border: solid black 2px;
+  _box-shadow: 3px 2px #ecf326, 6px 4px black;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-family: "Special Elite", cursive;
+}
+
+.bad-char {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+  background-color: black;
+  color: white;
+  border: solid black 2px;
+  _box-shadow: 3px 2px #ecf326, 6px 4px black;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-family: "Special Elite", cursive;
+}
+
+.button-keyboard {
+  all: unset;
+  pad: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  _background-color: rgb(230, 215, 0);
+  background-color: #ecf326;
+  color: black;
+  border: solid black 2px;
+  box-shadow: 3px 2px black;
+  padding: 0.75rem;
+  font-family: "Special Elite", cursive;
+}
+
+.button-keyboard:hover {
+  all: unset;
+  pad: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border: solid black 2px;
+  box-shadow: 3px 2px #ecf326, 6px 4px black;
+  _border-radius: 50%;
+  padding: 0.75rem;
+  font-family: "Special Elite", cursive;
+}
+
+.button-keyboard:disabled {
+  all: unset;
+  pad: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(128, 128, 128, 0);
+  color: black;
+  border: solid black 2px;
+  padding: 0.75rem;
+  font-family: "Special Elite", cursive;
+}
+
+#newWord {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  _font-size: 2rem;
+  background-color: white;
+  color: black;
+  border: solid black 2px;
+  padding: 0.75rem;
+  font-family: "Special Elite", cursive;
+}
+
+.nav-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  _font-size: 2rem;
+  background-color: white;
+  color: black;
+  border: solid black 2px;
+  padding: 0.75rem;
+  font-family: "Special Elite", cursive;
+}
+
+.wordlist {
+  position: absolute;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 2rem;
+  border: solid black 2px;
+  box-shadow: 3px 2px black;
+}
+
+.close-button {
+  all: unset;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: black;
+  color: white;
+  border: solid black 2px;
+  padding: 0.5rem;
+  border-radius: 100%;
+}
+
+.close-button:hover {
+  all: unset;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: white;
+  color: black;
+  border: solid black 2px;
+  padding: 0.5rem;
+  border-radius: 100%;
+}

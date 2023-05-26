@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Contrail+One&family=Fugaz+One&family=Montserrat+Subrayada:wght@700&family=Special+Elite&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+<body>
+    <div id="app">
+        <h1>HANGMAN</h1>
+        <main>
+            <header>
+                <div class="nav-div">
+                    <div class="nav-element">{{activeOrFail}}</div>
+                    <div class="nav-element">Fails: {{ fails }}</div>
+                </div>
+                <div class="nav-div"><input type="password" name="newWord" id="newWord" class="nav-element"
+                        placeholder="Pick your own word!" v-model="ownWord" @keydown.enter="restart">
+                    <button @click="toggleWords()" class="button-keyboard">Words</button>
+                    <button @click="restart()" class="button-keyboard">Restart</button>
+                </div>
+            </header>
+            <article>
+                <div v-if="isWordlistDisplayed" class="wordlist">
+                    <div v-for="word in wordList">{{word}}</div>
+                    <button class="close-button" @click="toggleWords()">x</button>
+                </div>
+                <template v-for="char in guessWord">
+                    <div v-if="goodChars.includes(char)" class="good-char">{{char}}</div>
+                    <div v-else-if="gameState === 'fail'" class="bad-char">{{char}}</div>
+                    <div v-else class="mystery-char">?</div>
+                </template>
+            </article>
+            <footer @click="buttonClick($event); checkForWinOrFail();">
+                <template v-for="char in alphabet">
+                    <button v-if="goodChars.includes(char)" disabled class="button-keyboard">{{char}}</button>
+                    <button v-else-if="badChars.includes(char)" disabled class="button-keyboard">{{char}}</button>
+                    <button v-else-if="gameState === 'fail'" disabled class="button-keyboard">{{char}}</button>
+                    <button v-else-if="gameState === 'success'" disabled class="button-keyboard">{{char}}</button>
+                    <button v-else class="button-keyboard">{{char}}</button>
+                </template>
+            </footer>
+        </main>
+    </div>
+    <script src=" https://unpkg.com/vue@3/dist/vue.global.js">
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
